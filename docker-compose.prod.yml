@@ -1,0 +1,12 @@
+version: "3"
+services:
+  stg:
+    build: .
+    image: ioc_prod
+    container_name: ioc-prod
+    tty: true
+    environment: 
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-hogehoge}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-hogehoge}
+    volumes: 
+      - ./terraform/prod:/infra/terraform
